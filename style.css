@@ -91,6 +91,8 @@ section {
     display: flex;
     position: relative;
     background-image: url('image1_bg.jpeg'); /* Replace with your actual background image */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image1_bg.jpeg');
+
     background-size: cover;
     justify-content: flex-start;
     align-items: center;
@@ -100,8 +102,8 @@ section {
 
 /* Logo Styles */
 .logo {
-    width: 200px;
-    height: 150px;
+    width: 250px;
+    height: 200px;
     position: absolute;
     top: 70px;
     left: 10px;
@@ -115,7 +117,7 @@ section {
 .team-name {
     position: absolute;
     right: 20px;
-    top: 320px;
+    top: 260px;
     transform: translateY(-80%);
 }
 
@@ -128,6 +130,9 @@ section {
 .section2 {
     display: flex;
     justify-content: center;
+    background-image: url('image1_bg.jpeg');
+    height: 100vh;
+    width: relative;
     align-items: center;
     position: relative;
     background-color: black;
