@@ -9,3 +9,4 @@ new fullpage('#fullPage', {
     slidesNavigation: true, // Enable bottom slide navigation
   });
 
+
