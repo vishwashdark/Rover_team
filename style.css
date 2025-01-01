@@ -45,13 +45,28 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
+    display: flex; /* Makes sure the content aligns properly */
+    justify-content: space-between; /* Space out logo and the nav items */
+    align-items: center; /* Vertically center items */
 }
 
+.home-info{
+    position: absolute;
+    align-items: center;
+    padding-top: 130px;
+    padding-left: 150px;
+}
+
+.home-info img{
+    width: 120%;
+}
 .nav-links {
     list-style-type: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 20px; /* Adds some space between the logo and the navigation items */
+    flex-grow: 1; /* Ensures the navigation items expand to fill space */
 }
 
 .nav-links li {
@@ -73,6 +88,19 @@ body {
     border-radius: 5px;
 }
 
+/* Styling the logo image on the left */
+.nav-logo {
+    left: -15px;
+    position: absolute;
+
+}
+
+.logo-img {
+    width: 150px;  /* Adjust size based on your image */
+    height: auto;
+    border-radius: 5px;
+}
+
 /* Container */
 .container {
     width: 100%;
@@ -91,7 +119,7 @@ section {
     display: flex;
     position: relative;
     background-image: url('image1_bg.jpeg'); /* Replace with your actual background image */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image1_bg.jpeg');
+    
 
     background-size: cover;
     justify-content: flex-start;
@@ -130,7 +158,7 @@ section {
 .section2 {
     display: flex;
     justify-content: center;
-    background-image: url('image1_bg.jpeg');
+    background-color: black;
     height: 100vh;
     width: relative;
     align-items: center;
@@ -151,7 +179,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover; /* Ensures video covers the section while maintaining aspect ratio */
     z-index: -1; /* Ensure the video is behind other content */
 }
@@ -166,6 +194,41 @@ section {
     padding: 50px;
 }
 
+.section4 {
+    position: relative;
+    width: 100%;
+    height: 100; /* Full height of the viewport */
+    color: white;
+    background-color: grey;
+    text-align: center;
+    padding: 50px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007BFF; /* Blue color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.button:active {
+    background-color: #00408d; /* Even darker blue on click */
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px); /* Downward movement on click */
+}
 
 /* Media Queries for Responsive Design */
 
