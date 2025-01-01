@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Custom Cursor */
 .custom-cursor {
     position: fixed;
@@ -28,20 +29,22 @@
     border-color: rgba(255, 255, 255, 0.5);
 }
 
-
+/* Body Styling */
 body {
     background-color: black;
     color: white;
     font-family: Arial, sans-serif;
+    margin: 0;
 }
 
+/* Navbar */
 .navbar {
     background: linear-gradient(90deg, #2f2f2f, #000000); /* Gradient from black to gray */
     padding: 20px 20px;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000; /* Ensure it stays on top */
+    z-index: 1000;
 }
 
 .nav-links {
@@ -70,58 +73,160 @@ body {
     border-radius: 5px;
 }
 
-
+/* Container */
 .container {
     width: 100%;
     height: 100vh;
 }
 
+/* Section Styles */
 section {
-    width: auto;
-    height: 800px;
+    width: 100%;
+    height: auto;
+    padding: 20px;
 }
 
+/* Section 1 */
 .section1 {
     display: flex;
     position: relative;
     background-image: url('image1_bg.jpeg'); /* Replace with your actual background image */
     background-size: cover;
-    justify-content: flex-start; /* Align items to the left */
-    align-items: center; /* Vertically center items */
+    justify-content: flex-start;
+    align-items: center;
     height: 100vh; /* Ensure the section fills the height of the screen */
-    padding: 0 20px; /* Optional: Add padding if necessary */
+    padding: 0 20px;
 }
 
+/* Logo Styles */
 .logo {
-    width: 200px; /* Set your desired diameter for the logo */
-    height: 150px; /* Same value for both width and height */
+    width: 200px;
+    height: 150px;
     position: absolute;
-    top: 70px; /* Distance from the top */
-    left: 10px; /* Distance from the left */
-    clip-path: circle(60%); /* This creates the circle effect */
-    background-image: url('rover_logo-removebg-preview.png'); /* Your image URL here */
-    background-size: cover; /* Ensures the image covers the circle */
-    background-position: center; /* Centers the image within the circle */
+    top: 70px;
+    left: 10px;
+    clip-path: circle(60%);
+    background-image: url('rover_logo-removebg-preview.png'); /* Replace with your logo image */
+    background-size: cover;
+    background-position: center;
 }
 
+/* Team Name Styles */
 .team-name {
-    position: absolute; /* Position it absolutely to the right */
-    right: 20px; /* Distance from the right */
+    position: absolute;
+    right: 20px;
     top: 320px;
-    transform: translateY(-80%); /* Adjust to center vertically */
-    padding-top: 70px;
+    transform: translateY(-80%);
 }
 
 .team-name img {
-    padding-top:-1200px;
-    width: 900px; 
-    height: -700px;
+    width: 600px; /* Adjust image size for team name */
+    height: auto;
 }
 
+/* Section 2 (for later content) */
 .section2 {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     background-color: black;
+}
+
+/* Section 3 */
+.section3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: black;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For devices with width up to 768px (tablets, large phones) */
+@media (max-width: 768px) {
+    /* Adjust Navbar */
+    .navbar {
+        padding: 15px;
+    }
+
+    /* Adjust Navbar Links */
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    /* Section 1 Layout (stack logo and team name vertically) */
+    .section1 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 10px;
+    }
+
+    .logo {
+        width: 150px;
+        height: 150px;
+        top: 10px;
+    }
+
+    .team-name {
+        position: relative;
+        top: 20px;
+        right: 0;
+        transform: none;
+        text-align: center;
+    }
+
+    .team-name img {
+        width: 100%;
+        max-width: 400px; /* Adjust max-width for smaller screens */
+    }
+}
+
+/* For devices with width up to 480px (small phones) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    /* Section 1 Adjustments */
+    .section1 {
+        padding: 20px;
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+        top: 10px;
+    }
+
+    .team-name {
+        position: relative;
+        top: 10px;
+        right: 0;
+        transform: none;
+        text-align: center;
+    }
+
+    .team-name img {
+        width: 100%;
+        max-width: 300px;
+    }
 }
