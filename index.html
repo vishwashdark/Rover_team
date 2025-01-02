@@ -11,6 +11,59 @@
             scroll-behavior: smooth;
         }
     </style>
+    <style>
+        .section4 {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        .sponsors-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .sponsors-slider {
+            display: flex;
+            gap: 40px;
+            animation: scroll 10s linear infinite;
+            will-change: transform;
+        }
+        
+        .sponsors-slider img {
+            width: 150px;
+            height: 100px;
+            flex-shrink: 0;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        /* Use JavaScript to duplicate images for seamless effect */
+        </style>
+        
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slider = document.querySelector(".sponsors-slider");
+            const images = Array.from(slider.children);
+        
+            // Duplicate images for a seamless loop
+            images.forEach((img) => {
+                const clone = img.cloneNode(true);
+                slider.appendChild(clone);
+            });
+        });
+        </script>
+    </style>
+
 </head>
 <body>
     <div class="custom-cursor"></div>
@@ -70,6 +123,21 @@
         </section>
 
         <section id="section4" class="section4">
+            <div>
+                <h2>OUR SPONSORS</h2>
+            </div>
+            <div class="sponsors-container">
+                <div class="sponsors-slider">
+                    <img src="amrita.png" alt="Sponsor 1">
+                    <img src="images.png" alt="Sponsor 2">
+                    <img src="newwro.jpg" alt="Sponsor 3">
+                    <img src="Polymaker.png" alt="Sponsor 4">
+                    <img src="railtellogo.png" alt="Sponsor 5">
+                    <img src="Screenshot 2024-12-31 112142.png" alt="Sponsor 6">
+                    <img src="Screenshot 2024-12-31 112437.png" alt="Sponsor 7">
+                    <img src="lighthouselogo.png" alt="Sponsor 8">
+                </div>
+            </div>
             <div class="text">
                 <a href="#section1" class="button">Home</a>
             </div>
