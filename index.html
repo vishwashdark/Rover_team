@@ -100,20 +100,18 @@
             </div>
         </section>
         
-        <!-- Section 2 -->
         <section id="section2" class="section2">
             <!-- Add content for Section 2 -->
         </section>
-
-        <!-- Section 3 -->
         <section id="section3" class="section3">
             <div class="video-container">
                 <!-- Embed .mp4 Video -->
-                <video autoplay muted loop id="background-video">
+                <video id="playable-video" width="100%" height="auto" muted autoplay loop>
                     <source src="IRC (International Rover Challenge) ｜ Team Odyssey ｜ AVVB ｜ Rover Functionality Demonstration ｜.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
+                               
             <br>
             <div class="know-more">
                 <a href="Teams.html" class="button">Know More about the team</a>
@@ -159,5 +157,37 @@
             cursor.style.transform = 'scale(1)';
         });
     </script>
+    <script>
+        const video = document.getElementById('playable-video');
+    
+        // Unmute and play the video when the section is visible and user has interacted
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (video.paused) {
+                        video.play(); // Play the video if it's paused
+                    }
+    
+                    // Check if the user has interacted with the page
+                    if (!video.muted && video.readyState >= 3) {
+                        video.muted = false; // Unmute the video
+                    }
+                } else {
+                    video.pause(); // Pause video when not visible
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the video is visible
+    
+        // Observe the video container
+        observer.observe(video);
+    
+        // Ensure unmuting works after user interaction
+        document.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false; // Unmute the video
+                video.play(); // Play the video if muted
+            }
+        });
+    </script>    
 </body>
 </html>

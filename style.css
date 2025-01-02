@@ -163,13 +163,18 @@ section {
 /* Section 2 (for later content) */
 .section2 {
     display: flex;
-    justify-content: center;
-    background-color: black;
+    position: relative;
+    background-image: url('rover_about.jpeg'); /* Replace with your actual background image */
+    background-size: cover;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh; /* Ensure the section fills the height of the screen */
+    padding: 0 20px;
+}
+
+.rover2 img{
     height: 100vh;
     width: relative;
-    align-items: center;
-    position: relative;
-    background-color: black;
 }
 
 /* Container for the video */
