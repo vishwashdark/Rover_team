@@ -126,17 +126,72 @@ section {
     transform: translateY(40%);  /* Keeps it vertically centered */
 }
 
-/* Section 2 */
+/* Section 2 with Background Image */
+/* Section 2 with Faded Background Image */
 .section2 {
     display: flex;
     flex-direction: column;
-    background-image: url('Images/rover_about.jpeg');
+    background-image: 
+        url('Images/rover_about.jpeg'), 
+        linear-gradient(rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 1.5)); /* Gradient overlay with transparency */
     background-size: cover;
     background-position: center;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     text-align: center;
+    position: relative; /* For positioning the overlay box */
+    color: white; /* Text color */
+}
+
+
+/* Overlay Box Styling */
+.overlay-box {
+    position: absolute;
+    top: 50%; /* Center the box vertically */
+    left: 50%; /* Center the box horizontally */
+    transform: translate(-50%, -50%); /* Exact centering */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    color: white; /* Text color */
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 80%;
+    width: 600px;
+    box-sizing: border-box;
+    text-align: left; /* Align text to the left */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for the box */
+}
+
+/* Title Styling */
+.overlay-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    text-transform: uppercase;
+    color: #00ffcc; /* Neon green color for the title */
+}
+
+/* Paragraph Styling */
+.overlay-box p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Optional: Add animation to fade-in the overlay box */
+@keyframes fadeInOverlay {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.overlay-box {
+    animation: fadeInOverlay 3s ease-out;
 }
 
 .rover2 img {
@@ -212,6 +267,8 @@ section {
     max-height: 100px;
     object-fit: contain;
 }
+
+
 
 /* Media Queries */
 @media (max-width: 1024px) {
