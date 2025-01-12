@@ -83,7 +83,7 @@ section {
 .section1 {
     display: flex;
     flex-direction: column;
-    background-image: url('image1_bg.jpeg');
+    background-image: url('Images/image1_bg.jpeg');
     background-size: cover;
     background-position: center;
     justify-content: center;
@@ -92,26 +92,32 @@ section {
     text-align: center;
 }
 
-.logo {
-    width: 150px;
-    height: 150px;
-    clip-path: circle(50%);
-    background-image: url('rover_logo-removebg-preview.png');
-    background-size: cover;
-    background-position: center;
+.logo img {
+    width: 80%;
+    max-width: 20%;
+    height: auto;
+    position: absolute;
+    top: 25%;        /* Vertically centers the logo */
+    left: 0;         /* Moves the logo to the left edge */
+    transform: translateY(-50%);  /* Keeps it vertically centered */
 }
 
 .team-name img {
-    width: 80%;
-    max-width: 400px;
+    width: 70%;
+    max-width: 40%;
     height: auto;
+    position: absolute;
+    top: 25%;        /* Vertically centers the team name */
+    right: 0;        /* Moves the team name to the right edge */
+    transform: translateY(-50%);  /* Keeps it vertically centered */
 }
+
 
 /* Section 2 */
 .section2 {
     display: flex;
     flex-direction: column;
-    background-image: url('rover_about.jpeg');
+    background-image: url('Images/rover_about.jpeg');
     background-size: cover;
     background-position: center;
     justify-content: center;
