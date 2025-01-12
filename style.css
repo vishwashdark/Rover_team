@@ -90,7 +90,11 @@ section {
     align-items: center;
     min-height: 100vh;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    background-blend-mode: multiply; /* Blends the color with the background image */
 }
+
+
 
 .logo img {
     width: 80%;
@@ -115,9 +119,11 @@ section {
 .home-info img {
     top: 120%;
     width: 100%;     /* Adjust the size of the image as needed */
-    max-width: 300rem; /* Limit the maximum width */
+    max-width: 400rem; /* Limit the maximum width */
     height: auto;
-    transform: translateY(30%);  /* Keeps it vertically centered */
+    position: left;
+    transform: translateX(-10%);  /* Keeps it vertically centered */
+    transform: translateY(40%);  /* Keeps it vertically centered */
 }
 
 /* Section 2 */
@@ -163,10 +169,11 @@ section {
 /* Button */
 .button {
     padding: 10px 20px;
+    top: 50%;
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background-color: #007BFF;
+    background-color: black;
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -175,12 +182,12 @@ section {
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: black;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button:active {
-    background-color: #00408d;
+    background-color: black;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
 }
 
