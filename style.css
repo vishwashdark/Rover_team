@@ -112,6 +112,13 @@ section {
     transform: translateY(-50%);  /* Keeps it vertically centered */
 }
 
+.home-info img {
+    top: 120%;
+    width: 100%;     /* Adjust the size of the image as needed */
+    max-width: 300rem; /* Limit the maximum width */
+    height: auto;
+    transform: translateY(30%);  /* Keeps it vertically centered */
+}
 
 /* Section 2 */
 .section2 {
@@ -190,6 +197,13 @@ section {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translate(-50%, -10%);
     z-index: 1000;
+}
+
+.sponsors-slider img {
+    width: 15%;
+    height: auto;
+    max-height: 100px;
+    object-fit: contain;
 }
 
 /* Media Queries */
