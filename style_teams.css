@@ -65,145 +65,78 @@ body {
     background-color: #555;
 }
 
-/* Rain animation styles */
-.rain {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    pointer-events: none;
-}
-
-.drop {
-    position: absolute;
-    width: 1px;
-    height: 180px;
-    background: #ffffff;
-}
-
-.stem {
-    width: 1px;
-    height: 60%;
-    background: rgba(255, 255, 255, 0.6);
-    animation: fall linear infinite;
-}
-
-.splat {
-    width: 15px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: splat linear infinite;
-}
-
-/* Animations */
-@keyframes fall {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(100vh);
-    }
-}
-
-@keyframes splat {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
-/* Container for cards, using CSS Grid */
+/* Card container styling for the custom grid layout */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-    grid-template-rows: auto auto auto; /* 3 rows */
+    grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+    grid-template-rows: auto; /* Automatically adjust row heights */
     grid-gap: 20px;
-    justify-items: center; /* Center the cards in each grid cell */
-    padding: 20px;
-  }
-  
-  /* The first card spans the entire first row */
-  .card:nth-child(1) {
-    grid-column: 1 / 4; /* Span all 3 columns in the first row */
-  }
-  
-  /* The second row with 3 cards */
-  .card:nth-child(2),
-  .card:nth-child(3),
-  .card:nth-child(4) {
-    grid-column: span 1; /* Each of the 3 cards should take 1 column */
-  }
-  
-  /* The last card spans the entire last row */
-  .card:nth-child(5) {
-    grid-column: 1 / 4; /* Span all 3 columns in the last row */
-  }
-  
-  /* Individual card styling */
-  .card {
+    justify-items: center;
+    padding: 80px 20px; /* Adjust padding to account for the navbar */
+}
+
+/* The first card spans the entire first row */
+.card:nth-child(1),
+.card:nth-child(6)
+ {
+    grid-column: span 1/span 2; /* Span all 3 columns */
+}
+
+/* The second row with 3 cards */
+.card:nth-child(2),
+.card:nth-child(3),
+.card:nth-child(4) {
+    grid-column: 3/ 3; /* Each card takes 1 column */
+}
+
+/* The last card spans the entire third row */
+.card:nth-child(5) {
+    grid-column: span 1/span 3; /* Span all 3 columns */
+}
+
+/* Individual card styling */
+.card {
     overflow: hidden;
     text-align: center;
     width: 320px;
     height: 535px;
-    background: url(http://www.riccardotartaglia.it/img/nature.jpg);
-    background-size: cover;
-    background-position: center;
     position: relative;
     margin: 10px;
     box-shadow: 
-      0px 30px 30px -20px rgba(0, 0, 0, 1),
-      inset 0 0 0 1000px rgba(67, 52, 109, 0.6);
+        0px 30px 30px -20px rgba(0, 0, 0, 1),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.6);
     transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
-  }
-  
-  .card:hover {
-    box-shadow: 
-      0px 30px 30px -20px rgba(0, 0, 0, 0.9),
-      inset 0 0 0 1000px rgba(67, 52, 109, 0.2);
-  }
-  
-  .card:hover .avatar {
-    animation: none;
-    box-shadow: 0;
-    width: 200px;
-    height: 200px;
-  }
-  
-  .card:hover .profile {
-    opacity: 1;
-    bottom: 0;
-  }
-  
-  .profile {
-    transition: all 0.5s cubic-bezier(0.37, 0.26, 0.35, 1);
-    opacity: 0;
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-  }
-  
-  .profile h1 {
-    color: #fff;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .profile h3 {
-    color: #aaa;
-    padding: 0;
-    margin: 5px 0 40px 0;
-    font-size: 0.9em;
-  }
-  
-  .avatar {
-    transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
-    animation: circleAn 4s infinite;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+
+/* Card backgrounds (different images for each card) */
+.card:nth-child(1) {
+    background: url('https://picsum.photos/500/700?random=1') no-repeat center;
+}
+
+.card:nth-child(2) {
+    background: url('https://picsum.photos/500/700?random=2') no-repeat center;
+}
+
+.card:nth-child(3) {
+    background: url('https://picsum.photos/500/700?random=3') no-repeat center;
+}
+
+.card:nth-child(4) {
+    background: url('https://picsum.photos/500/700?random=4') no-repeat center;
+}
+
+.card:nth-child(5) {
+    background: url('https://picsum.photos/500/700?random=5') no-repeat center;
+}
+.card:nth-child(6) {
+  background: url('https://picsum.photos/500/700?random=5') no-repeat center;
+}
+
+/* Avatar images (different for each card) */
+.avatar {
     width: 150px;
     height: 150px;
     position: absolute;
@@ -212,31 +145,98 @@ body {
     right: 0;
     bottom: 0;
     margin: auto;
-    background: url(https://randomuser.me/api/portraits/men/99.jpg);
     background-size: cover;
     background-position: center;
-    border-radius: 100%;
+    border-radius: 50%;
     box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.6);
-  }
-  
-  @keyframes circleAn {
+}
+
+.card:nth-child(1) .avatar {
+    background: url('https://randomuser.me/api/portraits/men/1.jpg');
+}
+
+.card:nth-child(2) .avatar {
+    background: url('https://randomuser.me/api/portraits/women/2.jpg');
+}
+
+.card:nth-child(3) .avatar {
+    background: url('https://randomuser.me/api/portraits/men/3.jpg');
+}
+
+.card:nth-child(4) .avatar {
+    background: url('https://randomuser.me/api/portraits/women/4.jpg');
+}
+
+.card:nth-child(5) .avatar {
+    background: url('https://randomuser.me/api/portraits/men/5.jpg');
+}
+.card:nth-child(6) .avatar {
+  background: url('https://randomuser.me/api/portraits/men/5.jpg');
+}
+
+
+/* Card hover effects */
+.card:hover {
+    box-shadow: 
+        0px 30px 30px -20px rgba(0, 0, 0, 0.9),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.2);
+}
+
+.card:hover .avatar {
+    animation: none;
+    box-shadow: 0;
+    width: 200px;
+    height: 200px;
+}
+
+/* Profile text inside the card */
+.profile {
+    transition: all 0.5s cubic-bezier(0.37, 0.26, 0.35, 1);
+    opacity: 0;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.profile h1 {
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.profile h3 {
+    color: #aaa;
+    padding: 0;
+    margin: 5px 0 40px 0;
+    font-size: 0.9em;
+}
+
+.card:hover .profile {
+    opacity: 1;
+    bottom: 0;
+}
+
+/* Avatar animation */
+@keyframes circleAn {
     0% {
-      box-shadow: 
-        0px 30px 30px -25px rgba(0, 0, 0, 0.6),
-        0px 0px 0px 0px rgba(102, 52, 105, 1),
-        0px 0px 0px 0px rgba(102, 52, 105, 0.7),
-        0px 0px 0px 0px rgba(102, 52, 105, 0.5);
+        box-shadow: 
+            0px 30px 30px -25px rgba(0, 0, 0, 0.6),
+            0px 0px 0px 0px rgba(102, 52, 105, 1),
+            0px 0px 0px 0px rgba(102, 52, 105, 0.7),
+            0px 0px 0px 0px rgba(102, 52, 105, 0.5);
     }
     100% {
-      box-shadow: 
-        0px 30px 30px -25px rgba(0, 0, 0, 0.6),
-        0px 0px 0px 70px rgba(102, 52, 105, 0),
-        0px 0px 0px 200px rgba(102, 52, 105, 0),
-        0px 0px 0px 300px rgba(102, 52, 105, 0);
+        box-shadow: 
+            0px 30px 30px -25px rgba(0, 0, 0, 0.6),
+            0px 0px 0px 70px rgba(102, 52, 105, 0),
+            0px 0px 0px 200px rgba(102, 52, 105, 0),
+            0px 0px 0px 300px rgba(102, 52, 105, 0);
     }
-  }
+}
 
-.Heading h1{
+/* Heading styling */
+.Heading h1 {
     text-align: center;
     margin-top: 5%;
+    color: white;
 }
