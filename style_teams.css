@@ -68,7 +68,7 @@ body {
 /* Card container styling for the custom grid layout */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+    grid-template-columns: repeat(4, 1fr); /* 3 equal columns */
     grid-template-rows: auto; /* Automatically adjust row heights */
     grid-gap: 20px;
     justify-items: center;
@@ -76,22 +76,21 @@ body {
 }
 
 /* The first card spans the entire first row */
-.card:nth-child(1),
-.card:nth-child(6)
- {
-    grid-column: span 1/span 2; /* Span all 3 columns */
+.card:nth-child(1) {
+    grid-column: 1 / -1; /* Span all 3 columns */
 }
 
 /* The second row with 3 cards */
 .card:nth-child(2),
 .card:nth-child(3),
-.card:nth-child(4) {
-    grid-column: 3/ 3; /* Each card takes 1 column */
+.card:nth-child(4),
+.card:nth-child(5) {
+    grid-column: span 1; /* Each card takes 1 column */
 }
 
 /* The last card spans the entire third row */
-.card:nth-child(5) {
-    grid-column: span 1/span 3; /* Span all 3 columns */
+.card:nth-child(6) {
+    grid-column: 1 / -1; /* Span all 3 columns */
 }
 
 /* Individual card styling */
@@ -109,38 +108,39 @@ body {
     background-size: cover;
     background-position: center;
     border-radius: 8px;
+    backdrop-filter: blur(10px);
 }
 
 /* Card backgrounds (different images for each card) */
 .card:nth-child(1) {
-    background: url('https://picsum.photos/500/700?random=1') no-repeat center;
+    background: url('') no-repeat center;
 }
 
 .card:nth-child(2) {
-    background: url('https://picsum.photos/500/700?random=2') no-repeat center;
+    background: url('Team_member/ruthvik_background.jpg');
+    background-size: cover;
+    backdrop-filter: blur(5px);
+
 }
 
 .card:nth-child(3) {
-    background: url('https://picsum.photos/500/700?random=3') no-repeat center;
+    background: url('') no-repeat center;
 }
 
 .card:nth-child(4) {
-    background: url('https://picsum.photos/500/700?random=4') no-repeat center;
+    background: url('') no-repeat center;
 }
 
 .card:nth-child(5) {
-    background: url('https://picsum.photos/500/700?random=5') no-repeat center;
-}
-.card:nth-child(6) {
-  background: url('https://picsum.photos/500/700?random=5') no-repeat center;
+    background: url('') no-repeat center;
 }
 
 /* Avatar images (different for each card) */
 .avatar {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     position: absolute;
-    top: 0;
+    top: 10px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -152,28 +152,26 @@ body {
 }
 
 .card:nth-child(1) .avatar {
-    background: url('https://randomuser.me/api/portraits/men/1.jpg');
+    background: url('');
 }
 
 .card:nth-child(2) .avatar {
-    background: url('https://randomuser.me/api/portraits/women/2.jpg');
+    background: url('Team_member/Ruthvik.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .card:nth-child(3) .avatar {
-    background: url('https://randomuser.me/api/portraits/men/3.jpg');
+    background: url('');
 }
 
 .card:nth-child(4) .avatar {
-    background: url('https://randomuser.me/api/portraits/women/4.jpg');
+    background: url('');
 }
 
 .card:nth-child(5) .avatar {
-    background: url('https://randomuser.me/api/portraits/men/5.jpg');
+    background: url('');
 }
-.card:nth-child(6) .avatar {
-  background: url('https://randomuser.me/api/portraits/men/5.jpg');
-}
-
 
 /* Card hover effects */
 .card:hover {
@@ -185,8 +183,8 @@ body {
 .card:hover .avatar {
     animation: none;
     box-shadow: 0;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 
 /* Profile text inside the card */
@@ -238,5 +236,47 @@ body {
 .Heading h1 {
     text-align: center;
     margin-top: 5%;
+    color: white;
+}
+
+/* Social Buttons Container */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+    margin-bottom: 30px;
+}
+
+/* Button Styling */
+.social-buttons .btn {
+    display: inline-block;
+    width: 40px; /* Size of the logo container */
+    height: 40px;
+    border-radius: 50%; /* Circle shape */
+    overflow: hidden;
+    background-color: transparent; /* No background for now */
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+/* Logo Styling */
+.social-buttons .btn img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; /* Adjust logo size to fit inside the circle */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.social-buttons .btn:hover img {
+    transform: scale(1.2); /* Slight zoom on hover */
+}
+
+.profile h3{
+    color: white;
+}
+
+.profile h1{
+    font-weight: bold;
     color: white;
 }
