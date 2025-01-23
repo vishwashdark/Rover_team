@@ -68,29 +68,71 @@ body {
 /* Card container styling for the custom grid layout */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 3 equal columns */
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
     grid-template-rows: auto; /* Automatically adjust row heights */
-    grid-gap: 20px;
-    justify-items: center;
+    grid-gap: 20px; /* Default gap for the rest of the grid */
+    justify-items: center; /* Center the items horizontally */
     padding: 80px 20px; /* Adjust padding to account for the navbar */
 }
 
-/* The first card spans the entire first row */
-.card:nth-child(1) {
-    grid-column: 1 / -1; /* Span all 3 columns */
+.card-container1{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-template-rows: auto; /* Automatically adjust row heights */
+    grid-gap: 20px; /* Default gap for the rest of the grid */
+    justify-items: center; /* Center the items horizontally */
+    padding: 80px 20px; /* Adjust padding to account for the navbar */
 }
 
+.card-container2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 equal columns */
+    grid-template-rows: auto; /* Automatically adjust row heights */
+    grid-gap: 20px; /* Default gap for the rest of the grid */
+    justify-items: center; /* Center the items horizontally */
+    padding: 80px 20px; /* Adjust padding to account for the navbar */
+}
+
+.card-container3{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-template-rows: auto; /* Automatically adjust row heights */
+    grid-gap: 20px; /* Default gap for the rest of the grid */
+    justify-items: top; /* Center the items horizontally */
+    padding: 80px 20px; /* Adjust padding to account for the navbar */
+}
+
+.card-container4{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 equal columns */
+    grid-template-rows: auto; /* Automatically adjust row heights */
+    grid-gap: 20px; /* Default gap for the rest of the grid */
+    justify-items: center; /* Center the items horizontally */
+    padding: 80px 20px; /* Adjust padding to account for the navbar */
+}
+
+
+/* The first two cards share the first row */
+.card:nth-child(1),
+.card:nth-child(2) {
+    grid-column: span 2; /* Each card spans 2 columns */
+}
+
+
+
 /* The second row with 3 cards */
-.card:nth-child(2),
-.card:nth-child(3),
-.card:nth-child(4),
-.card:nth-child(5) {
+.card1:nth-child(1),
+.card1:nth-child(2),
+.card1:nth-child(3),
+.card1:nth-child(4) {
     grid-column: span 1; /* Each card takes 1 column */
 }
 
-/* The last card spans the entire third row */
-.card:nth-child(6) {
-    grid-column: 1 / -1; /* Span all 3 columns */
+
+.card2:nth-child(1),
+.card2:nth-child(2),
+.card2:nth-child(3){
+    grid-column: span 1; /* Each card takes 1 column */
 }
 
 /* Individual card styling */
@@ -111,27 +153,81 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.card1 {
+    overflow: hidden;
+    text-align: center;
+    width: 320px;
+    height: 535px;
+    position: relative;
+    margin: 10px;
+    box-shadow: 
+        0px 30px 30px -20px rgba(0, 0, 0, 1),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.6);
+    transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+
+.card2 {
+    overflow: hidden;
+    text-align: center;
+    width: 320px;
+    height: 535px;
+    position: relative;
+    margin: 10px;
+    box-shadow: 
+        0px 30px 30px -20px rgba(0, 0, 0, 1),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.6);
+    transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+
+.card3 {
+    overflow: hidden;
+    text-align: center;
+    width: 320px;
+    height: 535px;
+    position: relative;
+    margin: 10px;
+    box-shadow: 
+        0px 30px 30px -20px rgba(0, 0, 0, 1),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.6);
+    transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.card4 {
+    overflow: hidden;
+    text-align: center;
+    width: 320px;
+    height: 535px;
+    position: relative;
+    margin: 10px;
+    box-shadow: 
+        0px 30px 30px -20px rgba(0, 0, 0, 1),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.6);
+    transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
 /* Card backgrounds (different images for each card) */
 .card:nth-child(1) {
     background: url('') no-repeat center;
 }
 
 .card:nth-child(2) {
-    background: url('Team_member/ruthvik_background.jpg');
-    background-size: cover;
-    backdrop-filter: blur(5px);
-
-}
-
-.card:nth-child(3) {
-    background: url('') no-repeat center;
-}
-
-.card:nth-child(4) {
-    background: url('') no-repeat center;
-}
-
-.card:nth-child(5) {
     background: url('') no-repeat center;
 }
 
@@ -140,10 +236,9 @@ body {
     width: 200px;
     height: 200px;
     position: absolute;
-    top: 10px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 20%; /* Center horizontally */
+    bottom: 100px; /* Adjust this value to take the avatar higher */
+    transform: translateY(-50%); /* Keep it centered horizontally */
     margin: auto;
     background-size: cover;
     background-position: center;
@@ -151,25 +246,15 @@ body {
     box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.6);
 }
 
+
+
+
+
 .card:nth-child(1) .avatar {
     background: url('');
 }
 
 .card:nth-child(2) .avatar {
-    background: url('Team_member/Ruthvik.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.card:nth-child(3) .avatar {
-    background: url('');
-}
-
-.card:nth-child(4) .avatar {
-    background: url('');
-}
-
-.card:nth-child(5) .avatar {
     background: url('');
 }
 
@@ -183,9 +268,272 @@ body {
 .card:hover .avatar {
     animation: none;
     box-shadow: 0;
-    width: 250px;
-    height: 250px;
+    width: 250px; /* Enlarges the avatar */
+    height: 250px; /* Enlarges the avatar */
+    bottom: 120px; /* Adjusted to move the enlarged avatar slightly higher */
+    left: 25%; /* Ensures it's centered horizontally */
+    transform: translateX(-20%) translateY(-50%); /* Keeps it centered vertically */
 }
+
+.card1:hover {
+    box-shadow: 
+        0px 30px 30px -20px rgba(0, 0, 0, 0.9),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.2);
+}
+
+.card1:hover .avatar {
+    animation: none;
+    box-shadow: 0;
+    width: 250px; /* Enlarges the avatar */
+    height: 250px; /* Enlarges the avatar */
+    bottom: 120px; /* Adjusted to move the enlarged avatar slightly higher */
+    left: 25%; /* Ensures it's centered horizontally */
+    transform: translateX(-15%) translateY(-50%); /* Keeps it centered vertically */
+}
+.card2:hover {
+    box-shadow: 
+        0px 30px 30px -20px rgba(0, 0, 0, 0.9),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.2);
+}
+
+.card2:hover .avatar {
+    animation: none;
+    box-shadow: 0;
+    width: 250px; /* Enlarges the avatar */
+    height: 250px; /* Enlarges the avatar */
+    bottom: 120px; /* Adjusted to move the enlarged avatar slightly higher */
+    left: 25%; /* Ensures it's centered horizontally */
+    transform: translateX(-15%) translateY(-50%); /* Keeps it centered vertically */
+}
+.card3:hover {
+    box-shadow: 
+        0px 30px 30px -20px rgba(0, 0, 0, 0.9),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.2);
+}
+
+.card3:hover .avatar {
+    animation: none;
+    box-shadow: 0;
+    width: 250px; /* Enlarges the avatar */
+    height: 250px; /* Enlarges the avatar */
+    bottom: 120px; /* Adjusted to move the enlarged avatar slightly higher */
+    left: 25%; /* Ensures it's centered horizontally */
+    transform: translateX(-15%) translateY(-50%); /* Keeps it centered vertically */
+}
+.card4:hover {
+    box-shadow: 
+        0px 30px 30px -20px rgba(0, 0, 0, 0.9),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.2);
+}
+
+.card4:hover .avatar {
+    animation: none;
+    box-shadow: 0;
+    width: 250px; /* Enlarges the avatar */
+    height: 250px; /* Enlarges the avatar */
+    bottom: 120px; /* Adjusted to move the enlarged avatar slightly higher */
+    left: 25%; /* Ensures it's centered horizontally */
+    transform: translateX(-15%) translateY(-50%); /* Keeps it centered vertically */
+}
+
+
+
+/* Correct avatars for each card */
+.card1:nth-child(1) .avatar {
+    background: url('Team_member/Ruthvik.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card1:nth-child(2) .avatar {
+    background: url('Team_member/aruthra.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card1:nth-child(3) .avatar {
+    background: url(''); 
+    background-size: cover;
+}
+
+.card1:nth-child(4) .avatar {
+    background: url('Team_member/batchu.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Backgrounds for cards */
+.card1:nth-child(1) {
+    background: url('Team_member/ruthvik_background.jpg');
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+
+.card1:nth-child(2) {
+    background: url('Team_member/aruthra_bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.card1:nth-child(3) {
+    background: url(''); 
+    background-size: cover;
+}
+
+.card1:nth-child(4) {
+    background: url('Team_member/batchu_waa.jpg');
+    background-size: cover; 
+    backdrop-filter: blur(5px);
+}
+
+.card2:nth-child(1) .avatar {
+    background: url('Team_member/harshada.jpg');
+    background-size: cover;
+    background-position: right;
+}
+
+.card2:nth-child(2) .avatar {
+    background: url('Team_member/hari_priya.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card2:nth-child(3) .avatar {
+    background: url('Team_member/sudhan.jpeg');
+    background-size: cover;
+}
+
+/* Backgrounds for cards */
+.card2:nth-child(1) {
+    background: url('Team_member/harshada_new_bg.avif');
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+
+.card2:nth-child(2) {
+    background: url('Team_member/hari_priya_bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.card2:nth-child(3) {
+    background: url('Team_member/sudhan_wall.jpg'); 
+    background-size: cover;
+}
+
+
+/* electronics subsystem */
+
+.card3:nth-child(1) .avatar {
+    background: url(''); /*manan*/
+    background-size: cover;
+    background-position: right;
+}
+
+.card3:nth-child(2) .avatar {
+    background: url('Team_member/mansi.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card3:nth-child(3) .avatar {
+    background: url(''); 
+    background-size: cover;
+}
+
+.card3:nth-child(4) .avatar {
+    background: url('Team_member/derrick.jpg'); 
+    background-size: cover;
+}
+
+/* Backgrounds for cards */
+.card3:nth-child(1) {
+    background: url('Team_member/harshada_new_bg.avif');
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+
+.card3:nth-child(2) {
+    background: url('Team_member/mansi_bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.card3:nth-child(3) {
+    background: url(''); 
+    background-size: cover;
+}
+
+.card3:nth-child(4) {
+    background: url('Team_member/derrickbg.jpg'); 
+    background-size: cover;
+}
+
+
+/* Mechanical */
+
+.card4:nth-child(1) .avatar {
+    background: url('Team_member/nandith.jpg'); /**/
+    background-size: cover;
+    background-position: right;
+}
+
+.card4:nth-child(2) .avatar {
+    background: url('Team_member/rishi.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card4:nth-child(3) .avatar {
+    background: url('Team_member/surya_mech.jpg'); 
+    background-size: cover;
+}
+.card4:nth-child(4) .avatar {
+    background: url('Team_member/sanskar.jpeg'); 
+    background-size: cover;
+}
+.card4:nth-child(5) .avatar {
+    background: url(''); 
+    background-size: cover;
+}
+.card4:nth-child(6) .avatar {
+    background: url(''); 
+    background-size: cover;
+}
+
+/* Backgrounds for cards */
+.card4:nth-child(1) {
+    background: url('Team_member/nandith.avif');
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+
+.card4:nth-child(2) {
+    background: url('Team_member/rishi_bg.jpg');
+    background-size: cover;
+    backdrop-filter: blur(15px);
+}
+
+.card4:nth-child(3) {
+    background: url('Team_member/sanskar_bg.jpg'); 
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+.card4:nth-child(4) {
+    background: url('Team_member/sanskar_bg.jpg');
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+
+.card4:nth-child(5) {
+    background: url('Team_member/mansi_bg.jpg') no-repeat center;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+
+.card4:nth-child(6) {
+    background: url(''); 
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+
 
 /* Profile text inside the card */
 .profile {
@@ -214,6 +562,25 @@ body {
     bottom: 0;
 }
 
+.card1:hover .profile {
+    opacity: 1;
+    bottom: 0;
+}
+
+.card2:hover .profile {
+    opacity: 1;
+    bottom: 0;
+}
+
+.card3:hover .profile {
+    opacity: 1;
+    bottom: 0;
+}
+
+.card4:hover .profile {
+    opacity: 1;
+    bottom: 0;
+}
 /* Avatar animation */
 @keyframes circleAn {
     0% {
@@ -280,3 +647,21 @@ body {
     font-weight: bold;
     color: white;
 }
+
+.section-title {
+    margin-bottom: 20px; /* Just space below it */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.section-title1 {
+    margin-bottom: 20px; /* Just space below it */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+
