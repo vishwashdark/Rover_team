@@ -101,7 +101,7 @@ section {
     max-width: 20%;
     height: auto;
     position: absolute;
-    top: 25%;        /* Vertically centers the logo */
+    top: 30%;        /* Vertically centers the logo */
     left: 0;         /* Moves the logo to the left edge */
     transform: translateY(-50%);  /* Keeps it vertically centered */
 }
@@ -111,7 +111,7 @@ section {
     max-width: 40%;
     height: auto;
     position: absolute;
-    top: 25%;        /* Vertically centers the team name */
+    top: 30%;        /* Vertically centers the team name */
     right: 0;        /* Moves the team name to the right edge */
     transform: translateY(-50%);  /* Keeps it vertically centered */
 }
