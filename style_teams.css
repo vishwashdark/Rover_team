@@ -7,7 +7,7 @@
 
 /* General Styling */
 body {
-    background-color: black;
+    background-color: rgb(37, 1, 37);
     color: white;
     font-family: Arial, sans-serif;
 }
@@ -68,7 +68,7 @@ body {
 /* Card container styling for the custom grid layout */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-template-columns: repeat(3, 1fr); /* 4 equal columns */
     grid-template-rows: auto; /* Automatically adjust row heights */
     grid-gap: 20px; /* Default gap for the rest of the grid */
     justify-items: center; /* Center the items horizontally */
@@ -111,11 +111,29 @@ body {
     padding: 80px 20px; /* Adjust padding to account for the navbar */
 }
 
+.card-container5{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 4 equal columns */
+    grid-template-rows: auto; /* Automatically adjust row heights */
+    grid-gap: 20px; /* Default gap for the rest of the grid */
+    justify-items: center; /* Center the items horizontally */
+    padding: 80px 20px; /* Adjust padding to account for the navbar */
+}
+
+.card-container6{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 equal columns */
+    grid-template-rows: auto; /* Automatically adjust row heights */
+    grid-gap: 20px; /* Default gap for the rest of the grid */
+    justify-items: center; /* Center the items horizontally */
+    padding: 80px 20px; /* Adjust padding to account for the navbar */
+}
 
 /* The first two cards share the first row */
 .card:nth-child(1),
-.card:nth-child(2) {
-    grid-column: span 2; /* Each card spans 2 columns */
+.card:nth-child(2),
+.card:nth-child(3) {
+    grid-column: span 1; /* Each card spans 2 columns */
 }
 
 
@@ -222,13 +240,37 @@ body {
     border-radius: 8px;
     backdrop-filter: blur(10px);
 }
+
+.card5 {
+    overflow: hidden;
+    text-align: center;
+    width: 320px;
+    height: 535px;
+    position: relative;
+    margin: 10px;
+    box-shadow: 
+        0px 30px 30px -20px rgba(0, 0, 0, 1),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.6);
+    transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
 /* Card backgrounds (different images for each card) */
 .card:nth-child(1) {
-    background: url('') no-repeat center;
+    background: url('Team_member/andrew_bg.avif') no-repeat center;
+    background-size: cover;
 }
 
 .card:nth-child(2) {
-    background: url('') no-repeat center;
+    background: url('Team_member/nippun_sir_bg.avif') no-repeat center;
+    background-size: cover;
+}
+
+.card:nth-child(3) {
+    background: url('Team_member/batchu_waa.jpg') no-repeat center;
+    background-size: cover;
 }
 
 /* Avatar images (different for each card) */
@@ -245,19 +287,21 @@ body {
     border-radius: 50%;
     box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.6);
 }
-
-
-
-
-
 .card:nth-child(1) .avatar {
-    background: url('');
+    background: url('Team_member/andrew.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .card:nth-child(2) .avatar {
-    background: url('');
+    background: url('Team_member/nippun_sir.jpg');
+    background-size: cover;
 }
 
+.card:nth-child(3) .avatar {
+    background: url('Team_member/batchu.jpg');
+    background-size: cover;
+}
 /* Card hover effects */
 .card:hover {
     box-shadow: 
@@ -336,7 +380,21 @@ body {
     transform: translateX(-15%) translateY(-50%); /* Keeps it centered vertically */
 }
 
+.card5:hover {
+    box-shadow: 
+        0px 30px 30px -20px rgba(0, 0, 0, 0.9),
+        inset 0 0 0 1000px rgba(67, 52, 109, 0.2);
+}
 
+.card5:hover .avatar {
+    animation: none;
+    box-shadow: 0;
+    width: 250px; /* Enlarges the avatar */
+    height: 250px; /* Enlarges the avatar */
+    bottom: 120px; /* Adjusted to move the enlarged avatar slightly higher */
+    left: 25%; /* Ensures it's centered horizontally */
+    transform: translateX(-15%) translateY(-50%); /* Keeps it centered vertically */
+}
 
 /* Correct avatars for each card */
 .card1:nth-child(1) .avatar {
@@ -352,14 +410,13 @@ body {
 }
 
 .card1:nth-child(3) .avatar {
-    background: url(''); 
+    background: url('Team_member/pranav.jpg'); 
     background-size: cover;
 }
 
 .card1:nth-child(4) .avatar {
-    background: url('Team_member/batchu.jpg');
+    background: url('Team_member/dinesh.jpg');
     background-size: cover;
-    background-position: center;
 }
 
 /* Backgrounds for cards */
@@ -375,12 +432,11 @@ body {
 }
 
 .card1:nth-child(3) {
-    background: url(''); 
-    background-size: cover;
+    background: url('Team_member/pranav_new_bg.jpg'); 
 }
 
 .card1:nth-child(4) {
-    background: url('Team_member/batchu_waa.jpg');
+    background: url('Team_member/dinesh_bg.png');
     background-size: cover; 
     backdrop-filter: blur(5px);
 }
@@ -435,7 +491,7 @@ body {
 }
 
 .card3:nth-child(3) .avatar {
-    background: url(''); 
+    background: url('Team_member/dhipin.jpg'); 
     background-size: cover;
 }
 
@@ -457,7 +513,7 @@ body {
 }
 
 .card3:nth-child(3) {
-    background: url(''); 
+    background: url('Team_member/dhipin_bg.jpg'); 
     background-size: cover;
 }
 
@@ -534,6 +590,20 @@ body {
     backdrop-filter: blur(5px);
 }
 
+/* Science */
+
+.card5:nth-child(1) .avatar {
+    background: url('Team_member/paida.jpg'); /**/
+    background-size: cover;
+    background-position: right;
+}
+
+/* Backgrounds for cards */
+.card5:nth-child(1) {
+    background: url('Team_member/paida_bg.jpg');
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
 
 /* Profile text inside the card */
 .profile {
@@ -578,6 +648,11 @@ body {
 }
 
 .card4:hover .profile {
+    opacity: 1;
+    bottom: 0;
+}
+
+.card5:hover .profile {
     opacity: 1;
     bottom: 0;
 }
