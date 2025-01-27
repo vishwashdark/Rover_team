@@ -83,10 +83,10 @@ section {
     color: white;
     background-size: contain; /* Makes the background image smaller while maintaining aspect ratio */
     background-position: center;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Parallax effect for background images */
     transition: background-image 0.5s ease-in-out;
-    padding-top: 80px; /* Added more padding-top for better spacing from the top */
-    position: relative; /* Ensure content is stacked correctly */
+    padding-top: 80px; /* Space from the top, adjust if needed */
 }
 
 /* Section One Styling */
