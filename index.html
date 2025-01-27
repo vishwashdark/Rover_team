@@ -61,8 +61,6 @@
 
 </head>
 <body>
-    <div class="custom-cursor"></div>
-
     <!-- Menu Bar -->
     <nav class="navbar">
         <ul class="nav-links">
@@ -75,8 +73,8 @@
             </break>
             <li><a href="#section1">Home</a></li>
             <li><a href="#section2">About</a></li>
-            <li><a href="#section3">Team</a></li>
-            <li><a href="projects.html">Projects</a></li>
+            <li><a href="Teams.html">Team</a></li>
+            <li><a href="IRC.html">IRC</a></li>
             <li><a href="#section5">Contact</a></li>
         </ul>
     </nav>
@@ -102,21 +100,23 @@
                 <p>We believe in collaboration, creativity, and continuous learning. Our mission is to develop solutions that can improve lives and transform industries.</p>
             </div>
         </section>
-        
         <section id="section3" class="section3">
-            <div class="video-container">
-                <!-- Embed .mp4 Video -->
-                <video id="playable-video" width="100%" height="auto" muted autoplay loop>
+            <div class="video-player-container">
+                <!-- Video Player -->
+                <video id="playable-video" class="video-player" width="100%" height="auto" controls>
                     <source src="Videos/IRC (International Rover Challenge) ｜ Team Odyssey ｜ AVVB ｜ Rover Functionality Demonstration ｜.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-            </div>
-            <br>             
-        <section id="button_sec" class="button_sec">
-            <div class="know-more">
-                <a href="Teams.html" class="button">Know More about the team</a>
+        
+                <!-- Custom Controls (optional) -->
+                <div class="custom-controls">
+                    <button id="play-pause" class="control-button">▶️</button>
+                    <button id="mute-unmute" class="control-button">🔊</button>
+                    <button id="fullscreen" class="control-button">⛶</button>
+                </div>
             </div>
         </section>
+        
         </section>
         <section id="section5" class="section5">
         </section>

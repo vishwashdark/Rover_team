@@ -489,3 +489,54 @@ html {
         max-width: 250px;
     }
 }
+/* Video Player Container */
+.video-player-container {
+  position: relative;
+  width: 80%; /* Adjust width as needed */
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Video Player */
+.video-player {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #000; /* Ensures no blank space around video */
+}
+
+/* Custom Controls */
+.custom-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Control Buttons */
+.control-button {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.control-button:hover {
+  transform: scale(1.2);
+}
+
+.control-button:active {
+  transform: scale(1);
+}
+
