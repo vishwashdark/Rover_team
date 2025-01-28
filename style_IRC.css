@@ -16,8 +16,8 @@ body {
 
 /* Navbar */
 .navbar {
-    background: linear-gradient(90deg, #1f1f1f, #000000);
-    padding: 15px 30px;
+    background: linear-gradient(90deg, #2f2f2f, #000000);
+    padding: 15px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -25,88 +25,131 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+    flex-wrap: wrap; /* Ensures content wraps on smaller screens */
 }
 
-/* Logo Styling */
 .nav-logo {
-    position: relative;
+    position: absolute;
+    left: 15px;
 }
 
 .logo-img {
-    width: 120px;
+    width: 150px;
     height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease; /* Add a hover effect for the logo */
+    border-radius: 5px;
 }
 
-.logo-img:hover {
-    transform: scale(1.1);
-}
-
-/* Navigation Links */
 .nav-links {
     list-style-type: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Spacing between links */
+    flex-wrap: wrap; /* Adjusts layout for smaller screens */
+    margin-left: auto; /* Push links to the right */
 }
 
 .nav-links li {
-    margin: 0;
+    margin: 0 10px;
 }
 
 .nav-links a {
     font-family: 'Jura', sans-serif;
     color: white;
-    font-weight: 600;
+    font-weight: bolder;
     text-decoration: none;
     font-size: 16px;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
-    border-radius: 8px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
 }
 
 .nav-links a:hover {
-    background-color: #444;
-    transform: scale(1.05); /* Slight scale effect on hover */
+    background-color: #555;
+}
+
+/* Responsive Navbar for mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .logo-img {
+        width: 120px;
+    }
 }
 
 /* Wrapper for sections */
 section {
-    height: 100vh; /* Each section takes the full viewport height */
-    display: flex;
+    height: 150vh; /* Each section takes the full viewport height */
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    background-size: contain; /* Makes the background image smaller while maintaining aspect ratio */
+    background-size: cover; /* Ensures the background image covers the area */
     background-position: center;
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Parallax effect for background images */
+    background-repeat: no-repeat; /* Prevents the image from repeating *//* Parallax effect for background images */
     transition: background-image 0.5s ease-in-out;
     padding-top: 80px; /* Space from the top, adjust if needed */
+    position: relative;
 }
 
 /* Section One Styling */
 .section-one {
     background-image: url('new/first.png');
+    background-size: cover;
 }
 
 /* Section Two Styling */
 .section-two {
     background-image: url('new/second.png');
+    background-size:;
 }
 
 /* Section Three Styling */
 .section-three {
     background-image: url('new/third.png');
+    background-size: cover;
 }
 
+.section-four {
+    background-image: url('new/fourth.png');
+    background-size: cover;
+}
 
-
-/* Add subtle overlay for better text readability */
+.section-five {
+    background-image: url('new/fifth.png');
+    background-size: cover;
+}
+.section-six{
+    background-image: url('new/6th.png');
+    background-size: cover;
+}
+.section-seven{
+    background-image: url('new/7th.png');
+    background-size: cover;
+}
+.section-eight{
+    background-image: url('new/8th.png');
+    background-size: cover;
+}
+.section-nine{
+    background-image: url('new/10th.png');
+    background-size: cover;
+}
+    /* Add subtle overlay for better text readability */
 section::before {
     content: '';
     position: absolute;
@@ -156,5 +199,9 @@ section p {
     .nav-links a {
         font-size: 14px;
         padding: 8px 10px;
+    }
+
+    section {
+        padding-top: 120px; /* Add more space to avoid overlap with the navbar */
     }
 }
